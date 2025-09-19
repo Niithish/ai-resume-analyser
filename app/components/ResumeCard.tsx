@@ -15,6 +15,7 @@ const ResumeCard = ({resume: {id,companyName, jobTitle, feedback, imagePath}} : 
             let url = URL.createObjectURL(blob);
             setResumeUrl(url)
         }
+        loadResume();
     }, [imagePath]);
 
     return (
@@ -31,7 +32,10 @@ const ResumeCard = ({resume: {id,companyName, jobTitle, feedback, imagePath}} : 
             </div>
             {resumeUrl && (<div className="gradient-border animate-in fade-in duration-1000">
                 <div className="w-full h-full">
-                    <img src={resumeUrl} className={"w-full h-[350px] max-sm:h-[200px] object-cover object-top"}/>
+                    <img src={resumeUrl}
+                         className={"w-full h-[350px] max-sm:h-[200px] object-cover object-top"}
+                         alt='Resume'
+                    />
                 </div>
             </div>)}
         </Link>
